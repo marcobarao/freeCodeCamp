@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Basic HTML & HTML5</title>
+</head>
+<body>
+    <h2 style="color: red;">CatPhotoApp</h2>
+    <main>
+        <p>
+            Click here to view more <a href="#">cat photos</a>
+        </p>
+        <a href="#">
+            <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute pussy cat">
+        </a>
+        <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+        <div>
+            <p>Things cats love:</p>
+            <ul>
+                <li>cat nip</li>
+                <li>laser pointers</li>
+                <li>lasagna</li>
+            </ul>
+            <p>Top 3 things cats hate:</p>
+            <ol>
+                <li>humans</li>
+                <li>humans</li>
+                <li>humans</li>
+            </ol>
+        </div>
+        <form action="/submit-cat-photos">
+            <label for="indoor">
+                <input type="radio" name="indoor-outdoor" id="indoor" checked> Indoor
+            </label>
+            <label for="outdoor">
+                <input type="radio" name="indoor-outdoor" id="outdoor"> Outdoor
+            </label>
+            <label for="lovely">
+                <input type="checkbox" name="personality" id="lovely" checked> Lovely
+            </label>
+            <label for="rebel">
+                <input type="checkbox" name="personality" id="rebel"> Rebel
+            </label>
+            <label for="gluttonous">
+                <input type="checkbox" name="personality" id="gluttonous"> Gluttonous
+            </label>
+            <input type="text" placeholder="cat photo URL" required>
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+    <footer id="footer">Copyright Cat Photo App</footer>
+</body>
+</html>
