@@ -20,7 +20,10 @@
         grid-template-columns: 1fr 100px 2fr;
         grid-template-rows: 50px 50px;
         grid-gap: 10px 20px;
-        align-items: end;
+        grid-template-areas:
+            "header header header"
+            ". content content"
+            "footer footer footer";
     }
 </style>    
 <div class="container">
