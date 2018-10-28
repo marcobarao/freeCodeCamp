@@ -230,3 +230,10 @@ function golfScore(par, strokes) {
 }
 
 golfScore(5, 4);
+
+// Returning boolean values from functions
+function isLess(a, b) {
+  return a < b;
+}
+
+isLess(10, 15);
