@@ -51,3 +51,35 @@ let reCriminals = /C+/;
 
 let matchedCriminals = crowd.match(reCriminals);
 console.log(matchedCriminals);
+
+// Match all letters and numbers
+let quoteSample = "The five boxing wizards jump quickly.";
+let alphabetRegexV2 = /\w/g;
+let result = quoteSample.match(alphabetRegexV2).length;
+
+// Match everything but letters and numbers
+let quoteSample = "The five boxing wizards jump quickly.";
+let nonAlphabetRegex = /\W/g;
+let result = quoteSample.match(nonAlphabetRegex).length;
+
+// Match all numbers
+let numString = "Your sandwich will be $5.00";
+let numRegex = /\d/g;
+let result = numString.match(numRegex).length;
+
+// Match all non-numbers
+let numString = "Your sandwich will be $5.00";
+let noNumRegex = /\D/g;
+let result = numString.match(noNumRegex).length;
+
+// Match whitespace
+let sample = "Whitespace is important in separating words";
+let countWhiteSpace = /\s/g;
+let result = sample.match(countWhiteSpace);
+
+// Match non-whitespace
+let sample = "Whitespace is important in separating words";
+let countNonWhiteSpace = /\S/g; // Change this line
+let result = sample.match(countNonWhiteSpace);
+
+// 
