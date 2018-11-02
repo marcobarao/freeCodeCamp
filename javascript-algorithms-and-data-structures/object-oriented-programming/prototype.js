@@ -1,3 +1,29 @@
+// Using prototype properties to reduce duplicate code
+function Dog(name) {
+  this.name = name;
+}
+Dog.prototype.numLegs = 4;
+
+let beagle = new Dog("Snoopy");
+
+// Interate over all properties
+function Dog(name) {
+  this.name = name;
+}
+Dog.prototype.numLegs = 4;
+
+let beagle = new Dog("Snoopy");
+
+let ownProps = [];
+let prototypeProps = [];
+for (let property in beagle) {
+  if (beagle.hasOwnProperty(property)) {
+    ownProps.push(property);
+  } else {
+    prototypeProps.push(property);
+  }
+}
+
 // Change a prototype to a new object
 function Dog(name) {
   this.name = name;
@@ -17,12 +43,8 @@ function Dog(name) {
 Dog.prototype = {
   constructor: Dog,
   numLegs: 2,
-  eat: function() {
-    console.log("nom nom nom");
-  },
-  describe: function() {
-    console.log("My name is " + this.name);
-  }
+  eat: () => console.log("nom nom nom"),
+  describe: () => console.log("My name is " + this.name)
 };
 
 // Understand where an object's prototype comes from

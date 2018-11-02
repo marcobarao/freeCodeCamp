@@ -19,9 +19,7 @@ function Animal() {}
 
 Animal.prototype = {
   constructor: Animal,
-  eat: function() {
-    console.log("nom nom nom");
-  }
+  eat: () => console.log("nom nom nom")
 };
 
 // Inherit behaviors from a supertype
@@ -29,9 +27,7 @@ function Animal() {}
 
 Animal.prototype = {
   constructor: Animal,
-  eat: function() {
-    console.log("nom nom nom");
-  }
+  eat: () => console.log("nom nom nom")
 };
 
 let duck = Object.create(Animal.prototype);
@@ -45,9 +41,7 @@ function Animal() {}
 
 Animal.prototype = {
   constructor: Animal,
-  eat: function() {
-    console.log("nom nom nom");
-  }
+  eat: () => console.log("nom nom nom")
 };
 
 function Dog() {}
@@ -74,7 +68,6 @@ function Animal() {}
 Animal.prototype.eat = () => console.log("nom nom nom nom");
 
 function Dog() {}
-
 Dog.prototype = Object.create(Animal.prototype);
 Dog.prototype.constructor = Dog;
 Dog.prototype.bark = () => console.log("Woof!");
@@ -86,7 +79,6 @@ beagle.bark();
 
 // Override inherited methods
 function Bird() {}
-
 Bird.prototype.fly = () => "I am flying!";
 
 function Penguin() {}
