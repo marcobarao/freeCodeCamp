@@ -110,3 +110,67 @@ class MyComponent extends React.Component {
     }
   }
 }
+
+// Pass state as props to child component
+class MyApp extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "CamperBot"
+    };
+  }
+  render() {
+    return (
+      <div>
+        <Navbar name={this.state.name} />
+      </div>
+    );
+  }
+}
+
+const Navbar = props => (
+  <div>
+    <h1>Hello, my name is: {props.name} </h1>
+  </div>
+);
+
+// Pass a callback as props
+class MyApp extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      inputValue: ""
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange = event => {
+    this.setState({
+      inputValue: event.target.value
+    });
+  };
+  render() {
+    return (
+      <div>
+        <GetInput
+          input={this.state.inputValue}
+          handleChange={this.handleChange}
+        />
+        <RenderInput input={this.state.inputValue} />
+      </div>
+    );
+  }
+}
+
+const GetInput = props => (
+  <div>
+    <h3>Get Input:</h3>
+    <input value={props.input} onChange={props.handleChange} />
+  </div>
+);
+
+const RenderInput = props => (
+  <div>
+    <h3>Input Render:</h3>
+    <p>{props.input}</p>
+  </div>
+);
