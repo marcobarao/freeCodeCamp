@@ -115,3 +115,36 @@ frankenSplice([1, 2, 3], [4, 5, 6], 1);
 const bouncer = arr => arr.filter(item => (item ? item : ""));
 
 bouncer([7, "ate", "", false, 9]);
+
+// Where do I belong
+const getIndexToIns = (arr, num) => {
+  arr.sort((a, b) => a > b);
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] >= num) {
+      return i;
+    }
+  }
+  return arr.length;
+};
+
+getIndexToIns([40, 60], 50);
+
+// Mutation
+const mutation = arr => {
+  const first = arr[0].toLowerCase().split("");
+  const second = arr[1].toLowerCase().split("");
+  return second.every(char => first.includes(char));
+};
+
+mutation(["hello", "hey"]);
+
+// Chunky monkey
+const chunkArrayInGroups = (arr, size) => {
+  let newArray = [];
+  for (let i = 0; i < arr.length; i += size) {
+    newArray.push(arr.slice(i, i + size));
+  }
+  return newArray;
+};
+
+chunkArrayInGroups(["a", "b", "c", "d"], 2);
