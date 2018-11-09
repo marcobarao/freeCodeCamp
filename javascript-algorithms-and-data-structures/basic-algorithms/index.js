@@ -76,3 +76,42 @@ const repeatStringNumTimes = (str, num) => {
 };
 
 repeatStringNumTimes("abc", 3);
+
+// Truncate a string
+const truncateString = (str, num) =>
+  num >= str.length ? str : str.substring(0, num) + "...";
+
+truncateString("A-tisket a-tasket A green and yellow basket", 8);
+
+// Finders Keeper
+const findElement = (arr, func) => arr.filter(func)[0];
+
+findElement([1, 2, 3, 4], num => num % 2 === 0);
+
+// Boo who
+const booWho = bool => typeof bool === "boolean";
+
+booWho(null);
+
+// Title case sensitive
+const titleCase = str => {
+  let str_arr = str.split(" ");
+  return str_arr
+    .map(word => word[0].toUpperCase() + word.slice(1).toLowerCase())
+    .join(" ");
+};
+
+titleCase("I'm a little tea pot");
+
+// Slice and splice
+const frankenSplice = (arr1, arr2, n) => {
+  let newArray = arr2.slice(0, n).concat(arr1, arr2.slice(n));
+  return newArray;
+};
+
+frankenSplice([1, 2, 3], [4, 5, 6], 1);
+
+// Falsy bouncer
+const bouncer = arr => arr.filter(item => (item ? item : ""));
+
+bouncer([7, "ate", "", false, 9]);
